@@ -1,5 +1,5 @@
 #![warn(clippy::all)]
-#![warn(future_incompatible, rust_2018_idioms)]
+#![warn(future_incompatible, rust_2024_compatibility)]
 use penrose::{core::bindings::KeyEventHandler, x11rb::RustConn};
 
 pub mod actions;
