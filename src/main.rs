@@ -27,7 +27,9 @@ fn main() -> anyhow::Result<()> {
     let tracing_builder = tracing_subscriber::fmt()
         // .json() // JSON logs
         // .flatten_event(true)
-        .with_env_filter("info")
+        .with_env_filter("debug")
+        // write to file as well as stdout for debugging /tmp/penrose.log
+        .with_writer(std::fs::OpenOptions::new().append(true).create(true).open("/tmp/penrose.log")?)
         .with_filter_reloading();
 
     let reload_handle = tracing_builder.reload_handle();

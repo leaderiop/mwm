@@ -37,7 +37,7 @@ where
         "M-S-k" => modify_with(|cs| cs.swap_up()),
         "M-space" => modify_with(|cs| cs.swap_focus_and_head()),
         "M-C-space" => modify_with(|cs| cs.rotate_focus_to_head()),
-        "M-S-q" => modify_with(|cs| cs.kill_focused()),
+        "M-q" => modify_with(|cs| cs.kill_focused()),
 
         // Workspaces
         "M-Tab" => modify_with(|cs| cs.toggle_tag()),
@@ -56,7 +56,7 @@ where
 
         // Launchers
         "M-A-s" => spawn("screenshot"),
-        "M-semicolon" => spawn("rofi-apps"),
+        "M-semicolon" => spawn("dmenu_run"),
         "M-Return" => spawn("st"),
         "M-A-w" => spawn("floating-webcam"),
         "M-slash" => Box::new(toggle_scratch),
